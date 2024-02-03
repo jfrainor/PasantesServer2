@@ -18,19 +18,18 @@ const addTutor = async (req, res) => {
     }
 
     let info = {
-      tutor_name: req.body.tutor_name,
-      tutor_apellido: req.body.tutor_apellido,
       tutor_cedula: req.body.tutor_cedula,
-      tutor_correo: req.body.tutor_correo,
-      tutor_tlf: req.body.tutor_tlf,
       estatus: req.body.estatus,
       usuario_id: req.body.usuario_id,
+      institucion_id: req.body.institucion_id,
+      carrera_id: req.body.carrera_id,
     };
 
     const tutor = await Tutor.create(info);
-    res.status(200).send(pasante);
+    res.status(200).send(tutor);
   } catch (err) {
     console.log(err);
+    res.status(500).send({ message: "Error al añadir el tutor" });
   }
 };
 

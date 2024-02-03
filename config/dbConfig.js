@@ -2,7 +2,7 @@ module.exports = {
     HOST: "localhost",
     USER: "root",
     PASSWORD: "",
-    DATABASE: "rnappserver",
+    DATABASE: "pasantesapp",
     dialect: "mysql",
     pool: {
       max: 5,

@@ -1,20 +1,16 @@
 const Sequelize = require("sequelize");
 const { DataTypes } = Sequelize;
 module.exports = (sequelize, DataTyples) => {
-  const tutor = sequelize.define(
-    "tutor",
+  const roles = sequelize.define(
+    "roles",
     {
-      idtutor: {
+      idRoles: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
       },
-      tutor_cedula: {
+      nombre: {
         type: DataTypes.STRING(45),
-        allowNull: false,
-      },
-      estatus: {
-        type: DataTypes.TINYINT(),
         allowNull: false,
       },
     },
@@ -22,5 +18,5 @@ module.exports = (sequelize, DataTyples) => {
       timestamps: false,
     }
   );
-  return tutor;
+  return roles;
 };

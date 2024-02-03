@@ -3,10 +3,12 @@ const cors = require("cors");
 const dbConfig = require("./config/dbConfig.js");
 const app = express();
 
+
 /* var corOptions = {
   origin: "https://localhost:8081",
 };
  */
+
 ///Middleware
 app.use(cors());
 app.use(express.json());

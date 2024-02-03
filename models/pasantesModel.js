@@ -9,30 +9,7 @@ module.exports = (sequelize, DataTyples) => {
         primaryKey: true,
         autoIncrement: true,
       },
-      pasante_name: {
-        type: DataTypes.STRING(45),
-        allowNull: false,
-      },
-
-      pasante_apellido: {
-        type: DataTypes.STRING(45),
-        allowNull: false,
-      },
-
       pasante_cedula: {
-        type: DataTypes.STRING(45),
-        allowNull: false,
-      },
-
-      pasante_empresa: {
-        type: DataTypes.STRING(45),
-        allowNull: false,
-      },
-      pasante_correo: {
-        type: DataTypes.STRING(45),
-        allowNull: false,
-      },
-      pasante_tlf: {
         type: DataTypes.STRING(45),
         allowNull: false,
       },

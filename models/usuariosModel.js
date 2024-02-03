@@ -13,6 +13,22 @@ module.exports = (sequelize, DataTyples) => {
         type: DataTypes.STRING(45),
         allowNull: false,
       },
+      apellido_user: {
+        type: DataTypes.STRING(45),
+        allowNull: false,
+      },
+      correo_user: {
+        type: DataTypes.STRING(45),
+        allowNull: false,
+      },
+      telefono_user: {
+        type: DataTypes.STRING(45),
+        allowNull: false,
+      },
+      genero_user: {
+        type: DataTypes.STRING(10),
+        allowNull: false,
+      },
       contra_user: {
         type: DataTypes.STRING(45),
         allowNull: false,

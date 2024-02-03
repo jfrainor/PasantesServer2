@@ -2,9 +2,15 @@ const db = require("../models");
 
 const Pasante = db.pasantes;
 
+// Obtener todos los pasantes
 const getAll = async (req, res) => {
-  let pasante = await Pasante.findAll({});
-  res.status(200).send(pasante);
+  try {
+    let pasantes = await Pasante.findAll({});
+    res.status(200).send(pasantes);
+  } catch (err) {
+    console.log(err);
+    res.status(500).send({ message: "Error al obtener los pasantes" });
+  }
 };
 
 const addPasante = async (req, res) => {
@@ -18,16 +24,10 @@ const addPasante = async (req, res) => {
     }
 
     let info = {
-      pasante_name: req.body.pasante_name,
-      pasante_apellido: req.body.pasante_apellido,
       pasante_cedula: req.body.pasante_cedula,
-      pasante_empresa: req.body.pasante_empresa,
-      pasante_correo: req.body.pasante_correo,
-      pasante_tlf: req.body.pasante_tlf,
       experiencia_acad: req.body.experiencia_acad,
       estatus: req.body.estatus,
       usuario_id: req.body.usuario_id,
-      cedula: req.body.cedula,
       institucion_id: req.body.institucion_id,
       carrera_id: req.body.carrera_id,
       tutor_id: req.body.tutor_id,
@@ -37,6 +37,7 @@ const addPasante = async (req, res) => {
     res.status(200).send(pasante);
   } catch (err) {
     console.log(err);
+    res.status(500).send({ message: "Error al añadir el pasante" });
   }
 };
 
